@@ -87,11 +87,11 @@
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "react-icons": "^4.4.0",
+    "styled-components": "^5.3.5",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vite-node": "^0.23.4",
-    "zx": "^7.0.8",
-    "styled-components": "^5.3.5"
+    "zx": "^7.0.8"
   },
   "dependencies": {
     "@polym/a11y": "*"
