@@ -51,7 +51,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -85,15 +86,13 @@
     "eslint-plugin-storybook": "^0.6.4",
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
-    "react-lorem-ipsum": "^1.4.10",
+    "react-icons": "^4.4.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vite-node": "^0.23.4",
     "zx": "^7.0.8"
   },
   "dependencies": {
-    "@polym/a11y": "*",
-    "styled-components": "^5.3.5",
-    "ts-pattern": "^4.0.5"
+    "@polym/a11y": "*"
   }
 }

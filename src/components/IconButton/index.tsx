@@ -13,4 +13,4 @@ const _IconButton = ({ ref, icon, label, ...props }: AllProps) => {
   )
 }
 
-export const IconButton = withShapeControl(forwardRef(_IconButton))
+export const IconButton = withShapeControl<AllProps>(forwardRef(_IconButton))
