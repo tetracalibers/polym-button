@@ -2,23 +2,12 @@ import { getDefaultProps, getPropType, NotRequired } from '@polym/react-props'
 import * as CSS from 'csstype'
 import { ElementType, forwardRef, ForwardedRef } from 'react'
 import styled, { css } from 'styled-components'
-import { CssGlobal, Length } from './cssTypes'
+import { CssGlobal, Length, LineStyle } from './cssTypes'
 import { DollarProps } from './DollarProps'
 import { isNotUndefined } from './util'
 
 type BorderWidth = 'thin' | 'medium' | 'thick' | CssGlobal | Length
-type BorderStyle =
-  | 'none'
-  | 'hidden'
-  | 'dotted'
-  | 'dashed'
-  | 'solid'
-  | 'double'
-  | 'groove'
-  | 'ridge'
-  | 'inset'
-  | 'outset'
-  | CssGlobal
+type BorderStyle = 'none' | 'hidden' | LineStyle | CssGlobal
 
 const conf = {
   borderColor: NotRequired<CSS.Property.BorderColor>(undefined),

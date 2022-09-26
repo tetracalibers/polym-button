@@ -33,3 +33,15 @@ export type MinSize =
   | CssGlobal
   | Percentage
   | 'auto'
+
+export type LineStyle =
+  | 'dotted'
+  | 'dashed'
+  | 'solid'
+  | 'double'
+  | 'groove'
+  | 'ridge'
+  | 'inset'
+  | 'outset'
+
+export type LineWidth = 'thin' | 'medium' | 'thick'
