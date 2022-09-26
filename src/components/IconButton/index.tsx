@@ -1,8 +1,8 @@
 import { VisuallyHidden } from '@polym/a11y'
 import { cloneElement, ForwardedRef, forwardRef } from 'react'
-import { withShapeControl } from '../../hoc/withShapeControl'
 import { Button } from '../Button'
 import { AllProps } from './model'
+import { withShape } from '../../hoc/withShape'
 
 const _IconButton = (
   { icon, label, ...props }: AllProps,
@@ -16,4 +16,4 @@ const _IconButton = (
   )
 }
 
-export const IconButton = withShapeControl<AllProps>(forwardRef(_IconButton))
+export const IconButton = withShape<AllProps>(forwardRef(_IconButton))

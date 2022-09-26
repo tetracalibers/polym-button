@@ -18,7 +18,7 @@ type ShapeProps = getPropType<typeof conf>
 
 const defaultProps = getDefaultProps<ShapeProps>(conf)
 
-export const withShapeControl = <Props,>(
+export const withShape = <Props,>(
   MainComponent: ElementType,
   defaultV: ShapeProps = defaultProps
 ) => {
