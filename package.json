@@ -57,6 +57,7 @@
     "@babel/core": "^7.19.1",
     "@polym/react-props": "*",
     "@polym/story-cssdata": "*",
+    "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",

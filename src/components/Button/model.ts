@@ -1,19 +1,24 @@
 import { getDefaultProps, getPropType, NotRequired } from '@polym/react-props'
-import { ComponentPropsWithRef } from 'react'
+import { ComponentPropsWithRef, ReactNode } from 'react'
 
 export const buttonTypeOptions = ['submit', 'reset', 'button'] as const
-type ButtonTypeOptions = typeof buttonTypeOptions[number]
+type ButtonType = typeof buttonTypeOptions[number]
 
 const conf = {
-  type: NotRequired<ButtonTypeOptions>('button'),
+  type: NotRequired<ButtonType>('button'),
   cssReset: NotRequired<boolean>(false),
   violationCheck: NotRequired<boolean>(true)
 }
 
 export type CharacterProps = getPropType<typeof conf>
 
-export type CoreProps = ComponentPropsWithRef<'button'>
+export type CoreProps = ComponentPropsWithRef<'button'> & {
+  children: ReactNode
+}
 
 export type AllProps = CharacterProps & CoreProps
 
-export const defaultProps = getDefaultProps<CharacterProps>(conf)
+export const defaultProps = {
+  ...getDefaultProps<CharacterProps>(conf),
+  children: ''
+}

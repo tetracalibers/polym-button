@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Button } from '../../components/Button'
+
+<Meta title="Button/document" component={Button} />
+
+# Button
+
+**Wrapper for `button`, the first step in accessibility considerations**
+
+- Type errors prevent forgetting to add attributes necessary for accessibility.
+- A warning will appear in the following cases
+  - Redundant markup
+  - HTML specification violations
+  - Inappropriate use of WAI-ARIA
+
+## props API
+
+[Click to go to 'Docs' tab in playground](?path=/docs/button--playground)
+
+## Rules to be verified
+
+- Interactive content (`a` | `button` | `[tabIndex]`) cannot be placed inside a button tag
+
+### Examples of Violations
+
+#### Specify `a` tag as a child element
+
+<Canvas>
+  <Button>
+    <a>a</a>
+  </Button>
+</Canvas>
+
+#### Specify elements with tabIndex as child elements
+
+<Canvas>
+  <Button>
+    <div tabIndex="1">button</div>
+  </Button>
+</Canvas>

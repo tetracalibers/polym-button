@@ -25,9 +25,10 @@ const reset = css`
   outline: none;
   padding: 0;
   appearance: none;
+  font-size: 1rem;
 `
 
 export const ButtonCore = styled.button<CharacterProps>`
-  ${(props) => props.violationCheck && checker}
   ${(props) => props.cssReset && reset}
+  ${(props) => props.violationCheck && checker}
 `

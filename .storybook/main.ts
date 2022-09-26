@@ -3,7 +3,7 @@ const { loadConfigFromFile, mergeConfig } = require('vite')
 
 module.exports = {
   stories: [
-    '../src/stories/*.stories.mdx',
+    '../src/stories/doc/*.stories.mdx',
     '../src/stories/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
