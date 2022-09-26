@@ -1,9 +1,4 @@
-import {
-  CSSt,
-  getDefaultProps,
-  getPropType,
-  NotRequired
-} from '@polym/react-props'
+import { getDefaultProps, getPropType, NotRequired } from '@polym/react-props'
 import { ElementType, ForwardedRef, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { Size, MaxSize, MinSize } from './cssTypes'

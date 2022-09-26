@@ -12,16 +12,16 @@ const conf = {
   opacity: NotRequired<number | CssGlobal>(undefined)
 }
 
-type SizeProps = getPropType<typeof conf>
+type ColorProps = getPropType<typeof conf>
 
-const defaultProps = getDefaultProps<SizeProps>(conf)
+const defaultProps = getDefaultProps<ColorProps>(conf)
 
-export const withSize = <Props,>(
+export const withColor = <Props,>(
   MainComponent: ElementType,
-  defaultV: SizeProps = defaultProps
+  defaultV: ColorProps = defaultProps
 ) => {
   // prettier-ignore
-  const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<SizeProps>>)`
+  const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<ColorProps>>)`
     ${({ $color }) => isNotUndefined($color) && css`color: ${$color};`}
     ${({ $bgColor }) => isNotUndefined($bgColor) && css`background-color: ${$bgColor};`}
     ${({ $opacity }) => isNotUndefined($opacity) && css`opacity: ${$opacity};`}
@@ -34,7 +34,7 @@ export const withSize = <Props,>(
         bgColor = defaultV.bgColor,
         opacity = defaultV.opacity,
         ...props
-      }: SizeProps & Props,
+      }: ColorProps & Props,
       ref: ForwardedRef<typeof MainComponent>
     ) => {
       return (
