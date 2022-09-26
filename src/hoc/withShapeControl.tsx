@@ -4,7 +4,7 @@ import {
   getPropType,
   NotRequired
 } from '@polym/react-props'
-import { ElementType, forwardRef } from 'react'
+import { ElementType, ForwardedRef, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 const conf = {
@@ -38,15 +38,19 @@ export const withShapeControl = <Props,>(
   `
 
   return forwardRef(
-    ({
-      circle = defaultV.circle,
-      radiusV = defaultV.radiusV,
-      radiusU = defaultV.radiusU,
-      ...props
-    }: ShapeProps & Props) => {
+    (
+      {
+        circle = defaultV.circle,
+        radiusV = defaultV.radiusV,
+        radiusU = defaultV.radiusU,
+        ...props
+      }: ShapeProps & Props,
+      ref: ForwardedRef<typeof MainComponent>
+    ) => {
       return (
         <EnhancedComponent
           {...props}
+          ref={ref}
           $circle={circle}
           $radiusU={radiusU}
           $radiusV={radiusV}

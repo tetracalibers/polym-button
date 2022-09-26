@@ -27,7 +27,7 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     return mergeConfig(config, {
-      base: '/polym-a11y/',
+      base: '/polym-button/',
       // manually specify plugins to avoid conflict
       plugins: []
     })

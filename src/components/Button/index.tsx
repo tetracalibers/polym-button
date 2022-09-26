@@ -1,10 +1,13 @@
-import { forwardRef, ReactElement } from 'react'
+import { ForwardedRef, forwardRef, ReactElement } from 'react'
 import { ButtonCore } from './ButtonCore'
 import { defaultProps as d, AllProps } from './model'
 
 type ButtonComponent = (props: AllProps) => ReactElement | null
 
-const _Button = ({ ref, children, ...p }: AllProps) => {
+const _Button = (
+  { children, ...p }: AllProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
   const props = {
     ...p,
     violationCheck: p.violationCheck ?? d.violationCheck,

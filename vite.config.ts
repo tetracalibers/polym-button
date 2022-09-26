@@ -15,7 +15,7 @@ export default defineConfig({
       fileName: (format) => `polym-button.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom']
+      external: ['react', 'react-dom', 'styled-components', '@polym/a11y']
     }
   }
 })
