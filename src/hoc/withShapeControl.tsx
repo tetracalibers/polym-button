@@ -6,6 +6,7 @@ import {
 } from '@polym/react-props'
 import { ElementType, ForwardedRef, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
+import { DollarProps } from './DollarProps'
 
 const conf = {
   circle: NotRequired<boolean>(false),
@@ -14,10 +15,6 @@ const conf = {
 }
 
 type ShapeProps = getPropType<typeof conf>
-
-type DollarProps<T> = {
-  [p in keyof T as `$${p extends string ? p : never}`]: T[p]
-}
 
 const defaultProps = getDefaultProps<ShapeProps>(conf)
 
