@@ -1518,6 +1518,14 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@polym/a11y@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@polym/a11y/-/a11y-1.0.0.tgz#435c5067b2437a107fb215d3187c062a2c81518d"
+  integrity sha512-tWHzJLkwdgMqdv0mm7GMgwf/ZNf+sXT84DcZRpD1fbpbLEJb3Ofid1ESXSIf/MUadTpgAuQov8fv0R+qVqkmjg==
+  dependencies:
+    styled-components "^5.3.5"
+    ts-pattern "^4.0.5"
+
 "@polym/react-props@*":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@polym/react-props/-/react-props-1.0.0.tgz#8caa37d532b7d59dd6570a5c0c163d24f2fa6568"

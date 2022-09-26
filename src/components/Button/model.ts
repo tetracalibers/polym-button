@@ -12,7 +12,7 @@ const conf = {
 
 export type CharacterProps = getPropType<typeof conf>
 
-export type CoreProps = ComponentPropsWithRef<'button'> & {
+export type CoreProps = Omit<ComponentPropsWithRef<'button'>, 'type'> & {
   children: ReactNode
 }
 

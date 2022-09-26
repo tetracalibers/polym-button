@@ -92,6 +92,7 @@
     "zx": "^7.0.8"
   },
   "dependencies": {
+    "@polym/a11y": "*",
     "styled-components": "^5.3.5",
     "ts-pattern": "^4.0.5"
   }
