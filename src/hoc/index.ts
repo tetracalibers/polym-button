@@ -9,6 +9,10 @@ import { withMargin } from './withMargin'
 import { withPadding } from './withPadding'
 import { withShape } from './withShape'
 import { withInnerPlace } from './withInnerPlace'
+import { withFontStyle } from './withFontStyle'
+import { withMinSize } from './withMinSize'
+import { withMaxSize } from './withMaxSize'
+import { withIconSize } from './withIconSize'
 import { ForwardRefExoticComponent, ComponentProps } from 'react'
 import { flow } from 'fp-ts/function'
 
@@ -23,7 +27,11 @@ const allHoC = [
   withMargin,
   withPadding,
   withShape,
-  withInnerPlace
+  withInnerPlace,
+  withFontStyle,
+  withMaxSize,
+  withMinSize,
+  withIconSize
 ] as const
 
 export type AllHoC = typeof allHoC[number]
@@ -49,5 +57,9 @@ export {
   withMargin,
   withPadding,
   withShape,
-  withInnerPlace
+  withInnerPlace,
+  withFontStyle,
+  withMaxSize,
+  withMinSize,
+  withIconSize
 }

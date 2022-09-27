@@ -8,7 +8,7 @@ import {
   withInnerPlace,
   withShape,
   withSize,
-  withText,
+  withIconSize,
   composeHoC
 } from '../../hoc'
 
@@ -37,8 +37,8 @@ const applyColor = applyHoC<typeof withColor>(withColor)({
   bgColor: '#4d608b',
   color: '#f5f4f0'
 })
-const applyText = applyHoC<typeof withText>(withText)({
-  fontSize: '2rem'
+const applyIconSize = applyHoC<typeof withIconSize>(withIconSize)({
+  iconSize: '2rem'
 })
 const applyInnerPlace = applyHoC<typeof withInnerPlace>(withInnerPlace)({
   center: true
@@ -48,6 +48,6 @@ export const IconButton = composeHoC(
   applyShape,
   applySize,
   applyColor,
-  applyText,
+  applyIconSize,
   applyInnerPlace
 )(component)
