@@ -3,7 +3,14 @@ import { cloneElement, ForwardedRef, forwardRef } from 'react'
 import { Button } from '../Button'
 import { AllProps } from './model'
 import { flow } from 'fp-ts/function'
-import { applyHoC, withColor, withShape, withSize, withText } from '../../hoc'
+import {
+  applyHoC,
+  withColor,
+  withInnerPlace,
+  withShape,
+  withSize,
+  withText
+} from '../../hoc'
 
 const _IconButton = (
   { icon, label, ...props }: AllProps,
@@ -33,10 +40,14 @@ const applyColor = applyHoC<typeof withColor>(withColor)({
 const applyText = applyHoC<typeof withText>(withText)({
   fontSize: '2rem'
 })
+const applyInnerPlace = applyHoC<typeof withInnerPlace>(withInnerPlace)({
+  center: true
+})
 
 export const IconButton = flow(
   applyShape,
   applySize,
   applyColor,
-  applyText
+  applyText,
+  applyInnerPlace
 )(component)

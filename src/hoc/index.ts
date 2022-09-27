@@ -8,6 +8,7 @@ import { withSize } from './withSize'
 import { withMargin } from './withMargin'
 import { withPadding } from './withPadding'
 import { withShape } from './withShape'
+import { withInnerPlace } from './withInnerPlace'
 import { ForwardRefExoticComponent, ComponentProps } from 'react'
 
 const allHoC = [
@@ -20,7 +21,8 @@ const allHoC = [
   withSize,
   withMargin,
   withPadding,
-  withShape
+  withShape,
+  withInnerPlace
 ] as const
 
 export type AllHoC = typeof allHoC[number]
@@ -43,5 +45,6 @@ export {
   withSize,
   withMargin,
   withPadding,
-  withShape
+  withShape,
+  withInnerPlace
 }
