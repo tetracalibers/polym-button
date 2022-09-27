@@ -30,16 +30,16 @@ const conf = {
   wordSpacing: NotRequired<WordSpacing>(undefined)
 }
 
-type OutlineProps = getPropType<typeof conf>
+type LongTextProps = getPropType<typeof conf>
 
-const defaultProps = getDefaultProps<OutlineProps>(conf)
+const defaultProps = getDefaultProps<LongTextProps>(conf)
 
-export const withOutline = <Props,>(
+export const withLongText = <Props,>(
   MainComponent: ElementType,
-  defaultV: OutlineProps = defaultProps
+  defaultV: LongTextProps = defaultProps
 ) => {
   // prettier-ignore
-  const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<OutlineProps>>)`
+  const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<LongTextProps>>)`
     ${({ $textOverflow }) => isNotUndefined($textOverflow) && css`text-overflow: ${$textOverflow};`}
     ${({ $whiteSpace }) => isNotUndefined($whiteSpace) && css`white-space: ${$whiteSpace};`}
     ${({ $wordBreak }) => isNotUndefined($wordBreak) && css`word-break: ${$wordBreak};`}
@@ -56,7 +56,7 @@ export const withOutline = <Props,>(
         hyphens = defaultV.hyphens,
         wordSpacing = defaultV.wordSpacing,
         ...props
-      }: OutlineProps & Props,
+      }: LongTextProps & Props,
       ref: ForwardedRef<typeof MainComponent>
     ) => {
       return (

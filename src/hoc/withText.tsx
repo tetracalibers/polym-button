@@ -68,11 +68,13 @@ export const withText = <Props,>(
 ) => {
   // prettier-ignore
   const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<TextProps>>)`
-    ${({ $fontSize }) => isNotUndefined($fontSize) && css`font-size: ${$fontSize};`}
-    ${({ $fontWeight }) => isNotUndefined($fontWeight) && css`font-weight: ${$fontWeight};`}
-    ${({ $fontStyle }) => isNotUndefined($fontStyle) && css`font-style: ${$fontStyle};`}
-    ${({ $lineHeight }) => isNotUndefined($lineHeight) && css`line-height: ${$lineHeight};`}
-    ${({ $textAlign }) => isNotUndefined($textAlign) && css`text-align: ${$textAlign};`}
+    &, & * {
+      ${({ $fontSize }) => isNotUndefined($fontSize) && css`font-size: ${$fontSize};`}
+      ${({ $fontWeight }) => isNotUndefined($fontWeight) && css`font-weight: ${$fontWeight};`}
+      ${({ $fontStyle }) => isNotUndefined($fontStyle) && css`font-style: ${$fontStyle};`}
+      ${({ $lineHeight }) => isNotUndefined($lineHeight) && css`line-height: ${$lineHeight};`}
+      ${({ $textAlign }) => isNotUndefined($textAlign) && css`text-align: ${$textAlign};`}
+    }
   `
 
   return forwardRef(

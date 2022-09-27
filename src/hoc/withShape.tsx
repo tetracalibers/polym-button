@@ -10,7 +10,7 @@ import { DollarProps } from './DollarProps'
 
 const conf = {
   circle: NotRequired<boolean>(false),
-  radiusV: NotRequired<number>(1),
+  radiusV: NotRequired<number>(undefined),
   radiusU: NotRequired<CSSt.Unit.Length>('em')
 }
 
@@ -28,7 +28,8 @@ export const withShape = <Props,>(
         ? css`
             border-radius: 50%;
           `
-        : css`
+        : props.$radiusV &&
+          css`
             --radius: ${props.$radiusV! + props.$radiusU!};
             border-radius: var(--radius);
           `}

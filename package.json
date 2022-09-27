@@ -94,6 +94,7 @@
     "zx": "^7.0.8"
   },
   "dependencies": {
-    "@polym/a11y": "*"
+    "@polym/a11y": "*",
+    "fp-ts": "^2.12.3"
   }
 }
