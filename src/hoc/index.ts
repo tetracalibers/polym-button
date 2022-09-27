@@ -10,6 +10,7 @@ import { withPadding } from './withPadding'
 import { withShape } from './withShape'
 import { withInnerPlace } from './withInnerPlace'
 import { ForwardRefExoticComponent, ComponentProps } from 'react'
+import { flow } from 'fp-ts/function'
 
 const allHoC = [
   withTextDecoration,
@@ -34,6 +35,8 @@ export const applyHoC =
     hoc<ComponentProps<C>>(component, d) as ForwardRefExoticComponent<
       ComponentProps<C> & ComponentProps<ReturnType<H>>
     >
+
+export const composeHoC = flow
 
 export {
   withText,

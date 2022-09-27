@@ -2,14 +2,14 @@ import { VisuallyHidden } from '@polym/a11y'
 import { cloneElement, ForwardedRef, forwardRef } from 'react'
 import { Button } from '../Button'
 import { AllProps } from './model'
-import { flow } from 'fp-ts/function'
 import {
   applyHoC,
   withColor,
   withInnerPlace,
   withShape,
   withSize,
-  withText
+  withText,
+  composeHoC
 } from '../../hoc'
 
 const _IconButton = (
@@ -44,7 +44,7 @@ const applyInnerPlace = applyHoC<typeof withInnerPlace>(withInnerPlace)({
   center: true
 })
 
-export const IconButton = flow(
+export const IconButton = composeHoC(
   applyShape,
   applySize,
   applyColor,
