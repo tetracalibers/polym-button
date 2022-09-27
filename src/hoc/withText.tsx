@@ -21,22 +21,6 @@ type FontSize =
   | Length
   | Percentage
 
-type KeywordFontWeight = 'bold' | 'normal'
-type RelativeFontWeight = 'lighter' | 'bolder'
-type NumericFontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-type FontWeight =
-  | KeywordFontWeight
-  | RelativeFontWeight
-  | NumericFontWeight
-  | CssGlobal
-
-type FontStyle =
-  | 'normal'
-  | 'italic'
-  | 'oblique'
-  | `oblique ${number}deg`
-  | CssGlobal
-
 type LineHeight = 'normal' | number
 
 type TextAlign =
@@ -52,8 +36,6 @@ type TextAlign =
 
 const conf = {
   fontSize: NotRequired<FontSize>(undefined),
-  fontWeight: NotRequired<FontWeight>(undefined),
-  fontStyle: NotRequired<FontStyle>(undefined),
   lineHeight: NotRequired<LineHeight>(undefined),
   textAlign: NotRequired<TextAlign>(undefined)
 }
@@ -70,8 +52,6 @@ export const withText = <Props,>(
   const EnhancedComponent = styled(MainComponent as ElementType<DollarProps<TextProps>>)`
     &, & * {
       ${({ $fontSize }) => isNotUndefined($fontSize) && css`font-size: ${$fontSize};`}
-      ${({ $fontWeight }) => isNotUndefined($fontWeight) && css`font-weight: ${$fontWeight};`}
-      ${({ $fontStyle }) => isNotUndefined($fontStyle) && css`font-style: ${$fontStyle};`}
       ${({ $lineHeight }) => isNotUndefined($lineHeight) && css`line-height: ${$lineHeight};`}
       ${({ $textAlign }) => isNotUndefined($textAlign) && css`text-align: ${$textAlign};`}
     }
@@ -81,8 +61,6 @@ export const withText = <Props,>(
     (
       {
         fontSize = defaultV.fontSize,
-        fontWeight = defaultV.fontWeight,
-        fontStyle = defaultV.fontStyle,
         lineHeight = defaultV.lineHeight,
         textAlign = defaultV.textAlign,
         ...props
@@ -94,8 +72,6 @@ export const withText = <Props,>(
           {...props}
           ref={ref}
           $fontSize={fontSize}
-          $fontWeight={fontWeight}
-          $fontStyle={fontStyle}
           $lineHeight={lineHeight}
           $textAlign={textAlign}
         />
